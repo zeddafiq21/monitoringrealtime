@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@highcharts/dashboards": "^2.0.0",
+    "ajax": "^0.0.4",
+    "firebase": "^10.9.0",
+    "highcharts": "^11.4.0",
+    "init": "^0.1.2"
+  }
+}

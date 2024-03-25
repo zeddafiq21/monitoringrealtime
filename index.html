@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="scripts/jquery.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://code.highcharts.com/dashboards/dashboards.js"></script>
+    <script src="https://code.highcharts.com/dashboards/modules/layout.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/es5/highcharts.js"></script>
+    <script src="https://code.highcharts.com/es5/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/dashboards/dashboards.js"></script>
+<script src="https://code.highcharts.com/dashboards/modules/layout.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+    </div>
+
+    <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto">
+    </div> -->
+    <section id="sidebar"> 
+        <div class="white-label">
+        </div> 
+        <div id="sidebar-nav">   
+          <ul>
+            <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-desktop"></i> PLTS</a></li>
+            <li><a href="#"><i class="fa fa-battery"></i> Baterai</a></li>
+            <li><a href="#"><i class="fa fa-pencil-square-o"></i> Beban </a></li>
+            <li><a href="#"><i class="fa fa-sitemap"></i> Analisis</a></li>
+            <li><a href="#"><i class="fa fa-line-chart"></i> Daya</a></li>
+            <li><a href="#"><i class="fa fa-comments-o"></i>Social Marketing</a></li>
+            <li><a href="#"><i class="fa fa-map-marker"></i> Lokasi</a></li>     
+            <li><a href="#"><i class="fa fa-users"></i> Employees</a></li>
+            <li><a href="#"><i class="fa fa-calendar-o"></i> Reservations</a></li>
+            <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
+          </ul>
+        </div>
+      </section>
+      <section id="content">
+        <div id="header">
+          <div class="header-nav">
+            <div class="menu-button">
+              <!--<i class="fa fa-navicon"></i>-->
+            </div>
+            <div class="nav">
+              <ul>
+                <li class="nav-settings">
+                  <div class="font-icon"><i class="fa fa-tasks"></i></div>
+                </li>
+                <li class="nav-mail">
+                  <div class="font-icon"><i class="fa fa-envelope-o"></i></div>
+                </li>
+                <li class="nav-calendar">
+                  <div class="font-icon"><i class="fa fa-calendar"></i></div>
+                </li>
+                <li class="nav-chat">
+                  <div class="font-icon"><i class="fa fa-comments-o"></i></div>
+                </li>
+                <li class="nav-profile">
+                  <div class="nav-profile-image">
+                    <div class="nav-profile-name"><i class="fa fa-caret-down"></i></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-header">
+            <h1>Dashboard</h1>
+            <p>Monitoring PLTS 900 Watt</p>
+
+
+
+
+          </div>
+
+
+
+              <div style=" width:100%; height:100%">
+                
+
+
+
+           
+              <div id="container-daya"></div>
+              <div id="container-tegangan"></div>
+              <div id="container-arus"></div>
+              <div id="container-faktordaya"></div>
+              <div id="container-energi"></div>
+              <div id="container-frekuensi"></div>
+              <div id="container-teganganPV"></div>
+              <div id="container-baterai"></div>
+              <div id="container-aruspv1"></div>
+              <div id="container-arusbaterai1"></div>
+              <div id="container-dayapv"></div>
+              <div id="container-dayabaterai"></div>
+
+
+
+
+               <div id="container-teganganpv" style="min-width: 310px; height: 400px; margin: 20px 10px">
+                  </div>
+              <div id="container-aruspv" style="min-width: 310px; height: 400px; margin: 10px 10px">
+            </div>
+            <div id="container-teganganbaterai" style="min-width: 310px; height: 400px; margin: 10px 10px">
+            </div>
+            <div id="container-arusbaterai" style="min-width: 310px; height: 400px; margin: 10px 10px">
+            </div>
+            <div id="container-teganganbeban" style="min-width: 310px; height: 400px; margin: 10px 10px">
+            </div>
+            <div id="container-arusbeban" style="min-width: 310px; height: 400px; margin: 10px 10px">
+            </div>
+          
+            
+        </div>
+
+
+</div>
+
+          
+      </section>
+
+
+</body>
+<script src="index.js"></script>
+<script src="kwh.js"></script>
+<!-- <script src="kwh.js"></script>
+<script src="kwh2.js"></script> -->
+
+
+  
+</html>
