@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@highcharts/dashboards": "^2.0.0",
     "ajax": "^0.0.4",
     "firebase": "^10.9.0",

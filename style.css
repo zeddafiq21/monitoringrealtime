@@ -1,5 +1,7 @@
-@import url("https://code.highcharts.com/css/highcharts.css");
+
 @import url("https://code.highcharts.com/dashboards/css/dashboards.css");
+@import url("https://code.highcharts.com/css/highcharts.css");
+@import url("https://code.highcharts.com/dashboards/css/datagrid.css");
 html, body {
     font-family: 'Open Sans', sans-serif;
     height: 100%;
@@ -147,7 +149,7 @@ html, body {
   
     overflow: hidden;
     width: 210px;
-    height: 620%;
+    height: 740%;
     float: left;
     background: #2A2D33;
   }
@@ -334,3 +336,15 @@ div .contect1{
 }
 
 
+.highcharts-dashboards-component-title {
+  font-size: 20px;
+}
+.highcharts-dashboards-component-subtitle {
+  font-size: 15px;
+}
+.highcharts-dashboards-component-kpi {
+  border-radius: 100px;
+}
+.highcharts-dashboards-component-kpi-value {
+  font-size: 30px;
+}

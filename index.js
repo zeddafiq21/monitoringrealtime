@@ -29,6 +29,8 @@
   var dataRef10 = database.ref('dayapv')
   var dataRef11 = database.ref('dayabaterai')
   var dataRef12 = database.ref('frekuensi')
+  var dataRef13 = database.ref('energipv')
+  var dataRef14 = database.ref('energibaterai')
 
 
 $(document).ready(function () {
@@ -57,14 +59,17 @@ $(document).ready(function () {
                         
                     }, 60000);
                 }
+                
             }
+            
         },
+        
         credits:{
             enabled :false
         },
         
         title: {
-            text: 'TEGANGAN PV'
+            text: 'PV Voltage'
         },
         xAxis: {
             type: 'datetime',
@@ -72,7 +77,7 @@ $(document).ready(function () {
         },
         yAxis: {
             title: {
-                text: 'Tegangan'
+                text: 'Voltage'
             },
            
         },
@@ -90,7 +95,7 @@ $(document).ready(function () {
             enabled: true
         },
         series: [{
-            name: 'Tegangan PV',
+            name: 'PV Voltage',
             color: 'rgba(30,144,255, 0.2)',
             data: (function () {
                 var data = [],
@@ -101,7 +106,7 @@ $(document).ready(function () {
                     data.push({
                         x: time + i * 1000,
                         
-                        y: Math.random()//data firebase
+                        y: 0//data firebase
                         
                     });
                 }
@@ -138,7 +143,7 @@ $(document).ready(function () {
       },
       
       title: {
-          text: 'ARUS PV'
+          text: 'PV Current'
       },
       xAxis: {
           type: 'datetime',
@@ -146,7 +151,7 @@ $(document).ready(function () {
       },
       yAxis: {
           title: {
-              text: 'Arus'
+              text: 'Current'
           },
          
       },
@@ -164,7 +169,7 @@ $(document).ready(function () {
           enabled: true
       },
       series: [{
-          name: 'Arus PV',
+          name: 'PV Current',
           color: 'rgba(30,144,255, 0.2)',
           data: (function () {
               var data = [],
@@ -175,7 +180,7 @@ $(document).ready(function () {
                   data.push({
                       x: time + i * 1000,
                       
-                      y: Math.random()//data firebase
+                      y: 0//data firebase
                       
                   });
               }
@@ -210,7 +215,7 @@ $(document).ready(function () {
     },
     
     title: {
-        text: 'TEGANGAN BATERAI'
+        text: 'Battery Voltage'
     },
     xAxis: {
         type: 'datetime',
@@ -218,7 +223,7 @@ $(document).ready(function () {
     },
     yAxis: {
         title: {
-            text: 'Tegangan'
+            text: 'Voltage'
         },
        
     },
@@ -236,7 +241,7 @@ $(document).ready(function () {
         enabled: true
     },
     series: [{
-        name: 'Tegangan Baterai',
+        name: 'Battery Voltage',
         color: 'rgba(30,144,255, 0.2)',
         data: (function () {
             var data = [],
@@ -247,7 +252,7 @@ $(document).ready(function () {
                 data.push({
                     x: time + i * 1000,
                     
-                    y: Math.random()//data firebase
+                    y: 0//data firebase
                     
                 });
             }
@@ -284,7 +289,7 @@ Highcharts.chart('container-arusbaterai', {
   },
   
   title: {
-      text: 'ARUS BATERAI'
+      text: 'Battery Current'
   },
   xAxis: {
       type: 'datetime',
@@ -292,7 +297,7 @@ Highcharts.chart('container-arusbaterai', {
   },
   yAxis: {
       title: {
-          text: 'Arus'
+          text: 'Current'
       },
      
   },
@@ -310,7 +315,7 @@ Highcharts.chart('container-arusbaterai', {
       enabled: true
   },
   series: [{
-      name: 'Arus Baterai',
+      name: 'Battery Current',
       color: 'rgba(30,144,255, 0.2)',
       data: (function () {
           var data = [],
@@ -321,7 +326,7 @@ Highcharts.chart('container-arusbaterai', {
               data.push({
                   x: time + i * 1000,
                   
-                  y: Math.random()//data firebase
+                  y: 0//data firebase
                   
               });
           }
@@ -357,7 +362,7 @@ Highcharts.chart('container-teganganbeban', {
   },
   
   title: {
-      text: 'TEGANGAN BEBAN'
+      text: 'Load Voltage'
   },
   xAxis: {
       type: 'datetime',
@@ -365,7 +370,7 @@ Highcharts.chart('container-teganganbeban', {
   },
   yAxis: {
       title: {
-          text: 'Tegangan'
+          text: 'Voltage'
       },
      
   },
@@ -383,7 +388,7 @@ Highcharts.chart('container-teganganbeban', {
       enabled: true
   },
   series: [{
-      name: 'Tegangan Beban',
+      name: 'Load Voltage',
       color: 'rgba(30,144,255, 0.2)',
       data: (function () {
           var data = [],
@@ -394,7 +399,7 @@ Highcharts.chart('container-teganganbeban', {
               data.push({
                   x: time + i * 1000,
                   
-                  y: Math.random()//data firebase
+                  y: 0//data firebase
                   
               });
           }
@@ -430,7 +435,7 @@ credits:{
 },
 
 title: {
-    text: 'ARUS BEBAN'
+    text: 'Load Current'
 },
 xAxis: {
     type: 'datetime',
@@ -438,7 +443,7 @@ xAxis: {
 },
 yAxis: {
     title: {
-        text: 'Arus'
+        text: 'Current'
     },
    
 },
@@ -456,7 +461,7 @@ exporting: {
     enabled: true
 },
 series: [{
-    name: 'Arus Beban',
+    name: 'Load Current',
     color: 'rgba(30,144,255, 0.2)',
     data: (function () {
         var data = [],
@@ -467,7 +472,7 @@ series: [{
             data.push({
                 x: time + i * 1000,
                 
-                y: Math.random()//data firebase
+                y: 0//data firebase
                 
             });
         }
@@ -489,10 +494,11 @@ function random(max, min = 0) {
   
   const boardsDaya = Dashboards.board('container-daya', {
      components: [{
-      renderTo: 'kpi-00',
+      renderTo: 'kpi-22',
       type: 'KPI',
-      title: 'DAYA (W)',
+      title: 'Load Power (W)',
       value: 70,
+      minFontSize: 10,
       chartOptions: {
         chart: {
           type: 'solidgauge'
@@ -524,6 +530,8 @@ function random(max, min = 0) {
     }, ],
     
      gui: {
+     
+    
       layouts: [{
         id: 'layout-1',
         rows: [{
@@ -538,7 +546,7 @@ function random(max, min = 0) {
           {
             id: 'kpi-03'
           },
-         
+          
         ]
 
         },
@@ -551,7 +559,9 @@ function random(max, min = 0) {
             id: 'kpi-12'
               },{
             id: 'kpi-13'
-              }]
+              }
+              
+            ]
           },
           {
             cells: [{
@@ -562,7 +572,24 @@ function random(max, min = 0) {
             id: 'kpi-22'
               },{
             id: 'kpi-23'
-              }]
+              }
+             
+            ]
+          },
+          {
+            cells: [{
+              id: 'kpi-30'
+            }, {
+              id: 'kpi-31'
+            },
+            {
+              id: 'kpi-32'
+            },
+            {
+              id: 'kpi-33'
+            },
+             
+            ]
           },
     
     
@@ -606,9 +633,9 @@ function random(max, min = 0) {
   
   const boardsTegangan = Dashboards.board('container-tegangan', {
      components: [{
-      renderTo: 'kpi-01',
+      renderTo: 'kpi-20',
       type: 'KPI',
-      title: 'INPUT AC (Inverter)',
+      title: 'Load Voltage (VAC)',
       value: 70,
       chartOptions: {
         chart: {
@@ -675,9 +702,9 @@ function random(max, min = 0) {
 
   const boardsArus = Dashboards.board('container-arus', {
     components: [{
-     renderTo: 'kpi-02',
+     renderTo: 'kpi-21',
      type: 'KPI',
-     title: 'ARUS (A)',
+     title: 'Load Current (A)',
      value: 1,
      chartOptions: {
        chart: {
@@ -743,9 +770,9 @@ function random(max, min = 0) {
 
  const boardsFaktorDaya = Dashboards.board('container-faktordaya', {
     components: [{
-     renderTo: 'kpi-03',
+     renderTo: 'kpi-31',
      type: 'KPI',
-     title: 'FAKTOR DAYA',
+     title: 'Power Factor',
      value: 0,
      chartOptions: {
        chart: {
@@ -810,9 +837,9 @@ function random(max, min = 0) {
 
   const boardsEnergi = Dashboards.board('container-energi', {
     components: [{
-     renderTo: 'kpi-10',
+     renderTo: 'kpi-23',
      type: 'KPI',
-     title: 'ENERGI (kwH)',
+     title: 'Load Energy (kWh)',
      value: 0,
      chartOptions: {
        chart: {
@@ -878,9 +905,9 @@ function random(max, min = 0) {
   
   const boardsFrekuensi = Dashboards.board('container-frekuensi', {
     components: [{
-     renderTo: 'kpi-11',
+     renderTo: 'kpi-30',
      type: 'KPI',
-     title: 'FREKUENSI (Hz)',
+     title: 'Frequency (Hz)',
      value: 0,
      chartOptions: {
        chart: {
@@ -947,9 +974,9 @@ function random(max, min = 0) {
 
   const boardsTeganganPV = Dashboards.board('container-teganganPV', {
     components: [{
-     renderTo: 'kpi-12',
+     renderTo: 'kpi-00',
      type: 'KPI',
-     title: 'INPUT PV (DC)',
+     title: 'PV Voltage (VDC)',
      value: 0,
      chartOptions: {
        chart: {
@@ -1017,9 +1044,9 @@ function random(max, min = 0) {
 
   const boardsBaterai = Dashboards.board('container-baterai', {
     components: [{
-     renderTo: 'kpi-13',
+     renderTo: 'kpi-10',
      type: 'KPI',
-     title: 'INPUT BATERAI (DC)',
+     title: 'Battery Voltage (VDC)',
      value: 0,
      chartOptions: {
        chart: {
@@ -1090,9 +1117,9 @@ function random(max, min = 0) {
 
   const boardsArusPv = Dashboards.board('container-aruspv1', {
     components: [{
-     renderTo: 'kpi-20',
+     renderTo: 'kpi-01',
      type: 'KPI',
-     title: 'ARUS PV',
+     title: 'PV Current (A)',
      value: 0,
      chartOptions: {
        chart: {
@@ -1160,9 +1187,9 @@ function random(max, min = 0) {
 
   const boardsArusBaterai = Dashboards.board('container-arusbaterai1', {
     components: [{
-     renderTo: 'kpi-21',
+     renderTo: 'kpi-11',
      type: 'KPI',
-     title: 'ARUS BATERAI',
+     title: 'Battery Current (A)',
      value: 0,
      chartOptions: {
        chart: {
@@ -1228,9 +1255,9 @@ function random(max, min = 0) {
 
   const boardsDayaPv = Dashboards.board('container-dayapv', {
     components: [{
-     renderTo: 'kpi-22',
+     renderTo: 'kpi-02',
      type: 'KPI',
-     title: 'DAYA PV (W)',
+     title: 'PV Power (W)',
      value: 0,
      chartOptions: {
        chart: {
@@ -1296,9 +1323,9 @@ function random(max, min = 0) {
 
   const boardsDayaBaterai = Dashboards.board('container-dayabaterai', {
     components: [{
-     renderTo: 'kpi-23',
+     renderTo: 'kpi-12',
      type: 'KPI',
-     title: 'DAYA BATERAI (W)',
+     title: 'Battery Power (W)',
      value: 0,
      chartOptions: {
        chart: {
@@ -1363,7 +1390,139 @@ function random(max, min = 0) {
 
 
   
+  const boardsEnergiPV = Dashboards.board('container-energipv', {
+    components: [{
+     renderTo: 'kpi-03',
+     type: 'KPI',
+     title: 'Energy PV (WP)',
+     value: 0,
+     chartOptions: {
+       chart: {
+         type: 'solidgauge'
+       },
+       pane: {
+         startAngle: -150,
+         endAngle: 150,
+         background: {
+           innerRadius: '60%',
+           outerRadius: '100%',
+           shape: 'arc'
+         }
+       },
+       yAxis: {
+         min: 0,
+         max:1000 
+       },
+       series: [{
+         dataLabels: {
+           enabled: true
+         },
+         rounded: true,
+         data: [{
+           innerRadius: '60%',
+           outerRadius: '100%'
+         }]
+       }]
+     }
+   }, ],
+   
+ });
+ 
+ function setValueEnergiPV() {
+    dataRef13.on('value', function(getdata1){
+     
+    boardsEnergiPV.mountedComponents.forEach(element => {
+      const chart = element.component.chart,
+        randomValue = getdata1.val();
+  
+      if (chart && chart.options.chart.type !== 'solidgauge') {
+        chart.series[0].addPoint(
+          randomValue,
+          true,
+          true
+        );
+      }
+  
+      element.component.update({
+        value: randomValue
+      });
+    });
 
+})
+
+  }
+  
+  // Update the data every second
+  setInterval(() => {
+    setValueEnergiPV();
+  }, 1000);
+
+  const boardsEnergiBaterai = Dashboards.board('container-energibaterai', {
+    components: [{
+     renderTo: 'kpi-13',
+     type: 'KPI',
+     title: 'Energy Battery (Wh)',
+     value: 0,
+     chartOptions: {
+       chart: {
+         type: 'solidgauge'
+       },
+       pane: {
+         startAngle: -150,
+         endAngle: 150,
+         background: {
+           innerRadius: '60%',
+           outerRadius: '100%',
+           shape: 'arc'
+         }
+       },
+       yAxis: {
+         min: 0,
+         max:1000 
+       },
+       series: [{
+         dataLabels: {
+           enabled: true
+         },
+         rounded: true,
+         data: [{
+           innerRadius: '60%',
+           outerRadius: '100%'
+         }]
+       }]
+     }
+   }, ],
+   
+ });
+ 
+ function setValueEnergiBaterai() {
+    dataRef14.on('value', function(getdata1){
+     
+    boardsEnergiBaterai.mountedComponents.forEach(element => {
+      const chart = element.component.chart,
+        randomValue = getdata1.val();
+  
+      if (chart && chart.options.chart.type !== 'solidgauge') {
+        chart.series[0].addPoint(
+          randomValue,
+          true,
+          true
+        );
+      }
+  
+      element.component.update({
+        value: randomValue
+      });
+    });
+
+})
+
+  }
+  
+  // Update the data every second
+  setInterval(() => {
+    setValueEnergiBaterai();
+  }, 1000);
 
   
 
